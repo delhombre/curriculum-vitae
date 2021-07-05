@@ -5,7 +5,7 @@ const Section2 = () => {
 		<>
 			<Head>
 				<link
-					href="http://fonts.cdnfonts.com/css/cascadia-mono"
+					href="https://fonts.cdnfonts.com/css/cascadia-mono"
 					rel="stylesheet"
 				/>
 			</Head>
