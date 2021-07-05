@@ -1,16 +1,70 @@
-html,
-body {
-  padding: 0;
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+:root {
+	--cs: 13.7;
+	--dw: 1920;
+	--ps: 55;
+	--ph: 55;
+	--bi: 70;
+	--sc: calc((var(--dw) / 100) * var(--cs));
+	--main: rgb(218, 0, 55);
+	--second: rgb(23, 23, 23);
+	--third: rgb(237, 237, 237);
+	--fourth: rgb(68, 68, 68);
+
+	--pln-background: #292d3e;
+	--pln-foreground: #959dcb;
+	--pln-comment: #676e95;
+	--pln-accent: #c3e88d;
+	--pln-redish: #ff5370;
+	--pln-orangish: #f78c6c;
+	--pln-yellowish: #ffcb6b;
+	--pln-greenish: #c3e88d;
+	--pln-bluish: #82aaff;
+	--pln-purplish: #c792ea;
+	--pln-aqua: #48ffff;
+	--pln-whitish: #f0f0f0;
+	--pln-status-bar: #202431;
+}
+
+*,
+::before,
+::after {
+	box-sizing: border-box;
+	padding: 0;
+	margin: 0;
+}
+
+html {
+	font-size: 13.7vw;
+	font-family: "Montserrat", sans-serif;
+	/* height: calc(var(--vh,1vh) * 100); */
 }
 
 a {
-  color: inherit;
-  text-decoration: none;
+	color: inherit;
+	text-decoration: none;
 }
 
-* {
-  box-sizing: border-box;
+@media (max-width: 768px) {
+	:root {
+		--cs: 21.6;
+		--dw: 455;
+		--ps: 24;
+		--ph: 20;
+		--bi: 20;
+	}
+
+	html {
+		font-size: 21.6vw;
+	}
+}
+
+@media (max-width: 480px) {
+	:root {
+		--cs: 10;
+		--dw: 414;
+	}
+
+	html {
+		font-size: 10vw;
+	}
 }
