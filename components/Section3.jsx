@@ -40,14 +40,11 @@ const Section3 = () => {
 								</div>
 								<div className="address">https://obscury.heroko.com</div>
 							</div>
-							<div className="scene">image</div>
-						</div>
-					</div>
-					<div className="selected-works">
-						<div className="projects">
-							<div className="project">obscury</div>
-							<div className="project">aly</div>
-							<div className="project">myrtfm</div>
+							<div className="scene">
+								<p>Obscury</p>
+								<p>Aly</p>
+								<p>Myrtfm</p>
+							</div>
 						</div>
 					</div>
 				</div>
@@ -56,26 +53,28 @@ const Section3 = () => {
 			<style jsx>{`
 				section {
 					min-height: 100vh;
-					background-color: blue;
+					width: 100vw;
+					background-color: var(--second);
 					clip-path: polygon(0 20%, 100% 10%, 100% 100%, 0 100%);
+					position: relative;
 				}
 
 				.wrapper {
-					margin: 0 calc((var(--ps) / var(--sc)) * 1rem)
-						calc((150 / var(--sc)) * 1rem);
+					margin: 0 calc((var(--ps) / var(--sc)) * 1rem);
 					padding-top: 20%;
+					position: absolute;
+					top: 0;
+					left: 0;
+					right: 0;
+					bottom: 0;
 				}
 
 				.container {
 					grid-template-columns: repeat(2, 1fr);
-					padding: 200px 0px 0px;
-					min-height: 400px;
+					height: 100%;
 					position: relative;
-					color: rgb(255, 255, 255);
-					padding: 200px 16px 0px;
-					min-height: 770px;
+					color: var(--third);
 					display: grid;
-					-webkit-box-align: center;
 					align-items: center;
 				}
 
@@ -91,13 +90,15 @@ const Section3 = () => {
 					background-repeat: no-repeat;
 					width: calc((150 / var(--sc)) * 1rem);
 					height: calc((150 / var(--sc)) * 1rem);
+					background-color: rgb(34 31 31);
+					border-radius: 15px;
+					background-size: 80%;
 				}
 
 				.icon:nth-child(1) {
 					background-image: url(/icons/react.svg);
 					top: 10%;
 					left: 5%;
-					background-color: red;
 				}
 
 				.icon:nth-child(2) {
@@ -131,6 +132,7 @@ const Section3 = () => {
 				h3 {
 					font-size: calc((40 / var(--sc)) * 1rem);
 					margin-bottom: calc((20 / var(--sc)) * 1rem);
+					color: var(--main);
 				}
 
 				h2 {
@@ -146,7 +148,7 @@ const Section3 = () => {
 				.display {
 					position: relative;
 					width: 100%;
-					border: 1px solid rgba(66, 71, 112, 0.2);
+					border: 1px solid var(--third);
 					border-radius: 8px;
 					overflow: hidden;
 				}
@@ -155,7 +157,7 @@ const Section3 = () => {
 					position: relative;
 					height: 40px;
 					width: 100%;
-					background: rgb(13, 22, 45);
+					background: var(--third);
 					display: flex;
 					align-items: center;
 					border-radius: 8px 0px 0px;
@@ -169,11 +171,22 @@ const Section3 = () => {
 				}
 
 				.dot {
-					background-color: rgb(57, 78, 113);
 					border-radius: 50%;
 					width: 9px;
 					height: 9px;
 					margin: 0px 3px;
+				}
+
+				.dot:nth-child(1) {
+					background: rgba(255, 0, 0, 0.5);
+				}
+
+				.dot:nth-child(2) {
+					background: rgba(255, 255, 0, 0.5);
+				}
+
+				.dot:nth-child(3) {
+					background: rgba(0, 128, 0, 0.5);
 				}
 
 				.arrows {
@@ -188,12 +201,18 @@ const Section3 = () => {
 					background-image: url(/icons/chevron-left.svg);
 					background-position: center;
 					background-repeat: no-repeat;
+					width: 16px;
+					height: 16px;
+					background-size: 80%;
 				}
 
 				.arrow-right {
 					background-image: url(/icons/chevron-right.svg);
 					background-position: center;
 					background-repeat: no-repeat;
+					width: 16px;
+					height: 16px;
+					background-size: 80%;
 				}
 
 				.address {
@@ -202,45 +221,107 @@ const Section3 = () => {
 					display: flex;
 					justify-content: center;
 					align-items: center;
-					background: rgb(48, 61, 86);
+					background: rgb(0, 0, 0, 0.25);
 					width: 50%;
 					height: 18px;
 					border-radius: 5px;
 					pointer-events: none;
 					font-size: 10px;
-					color: rgb(75, 86, 108);
+					color: var(--third);
 				}
 
 				.scene {
-					background: rgb(13, 22, 45);
+					background: var(--third);
+					backdrop-filter: blur(1rem);
 					display: flex;
 					align-items: center;
 					justify-content: center;
+					color: var(--second);
+					flex-direction: column;
 				}
 
-				.selected-works {
-					width: 100%;
-					display: flex;
-					align-items: center;
-					justify-content: flex-end;
-					padding-bottom: 100px;
-					margin-top: 20px;
-				}
+				@media screen and (max-width: 768px) {
+					.wrapper {
+						padding-top: 30%;
+					}
 
-				.projects {
-					margin: 10px 0px;
-					width: 100%;
-					display: grid;
-					grid-template-rows: auto;
-					grid-template-columns: repeat(3, 1fr);
-					grid-template-areas: none;
-					grid-auto-flow: initial;
-					grid-auto-columns: initial;
-					grid-auto-rows: initial;
-					place-items: center;
-					-webkit-box-align: center;
-					row-gap: 20px;
-					font-size: calc((30 / var(--sc)) * 1rem);
+					.container {
+						display: flex;
+						flex-direction: column;
+					}
+
+					.icon {
+						width: calc((50 / var(--sc)) * 1rem);
+						height: calc((50 / var(--sc)) * 1rem);
+						border-radius: 5px;
+						background-size: 60%;
+					}
+
+					.works-description {
+						width: 100%;
+						margin-top: calc((150 / var(--sc)) * 1rem);
+						margin-bottom: calc((30 / var(--sc)) * 1rem);
+					}
+
+					h3 {
+						font-size: calc((20 / var(--sc)) * 1rem);
+					}
+
+					h2 {
+						font-size: calc((25 / var(--sc)) * 1rem);
+					}
+
+					p {
+						font-size: calc((20 / var(--sc)) * 1rem);
+					}
+
+					.display {
+						border: 1px solid var(--third);
+						border-radius: 5px;
+					}
+
+					.navigation-bar {
+						border-radius: 5px 0px 0px;
+					}
+
+					.dots {
+						display: flex;
+						align-items: center;
+						position: absolute;
+						left: 10px;
+					}
+
+					.dot {
+						border-radius: 50%;
+						width: 9px;
+						height: 9px;
+						margin: 0px 3px;
+					}
+
+					.arrows {
+						left: 22%;
+					}
+
+					.address {
+						left: 35%;
+						height: 15px;
+						border-radius: 5px;
+						font-size: 7px;
+					}
+
+					.scene {
+						background: var(--third);
+						backdrop-filter: blur(1rem);
+						display: flex;
+						align-items: center;
+						justify-content: center;
+						color: var(--second);
+						flex-direction: column;
+					}
+
+					.scene p {
+						padding: 0 calc((10 / var(--sc)) * 1rem);
+					}
 				}
 			`}</style>
 		</>
