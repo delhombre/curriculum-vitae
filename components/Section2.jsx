@@ -49,60 +49,33 @@ const Section2 = () => {
 										<span className="whitish">;</span>
 									</span>
 
-									<span style={{ paddingTop: "calc((70 / var(--sc)) * 1rem)" }}>
+									<span className="while">
 										<span className="purplish">while </span>
 										<span className="yellowish">(</span>
 										<span className="purplish">!</span>
 										<span className="whitish">isProjectFinished</span>
 										<span className="yellowish">)</span>
 										<span className="yellowish">{`{`}</span>
-										<span
-											style={{
-												display: "block",
-												paddingTop: "calc((20 / var(--sc)) * 1rem)",
-												paddingLeft: "calc((20 / var(--sc)) * 1rem)",
-											}}
-										>
+										<span className="includeAwesomeEngineer">
 											<span className="whitish">project</span>
 											<span className="purplish">.</span>
 											<span className="bluish">includeAwesomeEngineer</span>
 											<span className="purplish">()</span>
 											<span className="whitish">;</span>
 										</span>
-										<span
-											style={{
-												display: "block",
-												paddingTop: "calc((20 / var(--sc)) * 1rem)",
-											}}
-										>
+										<span className="brace">
 											<span className="yellowish">{`}`}</span>
 										</span>
 									</span>
 
-									<span
-										style={{
-											paddingTop: "calc((70 / var(--sc)) * 1rem)",
-										}}
-									>
+									<span className="project">
 										<span className="whitish">project</span>
-										<span
-											style={{
-												display: "block",
-												paddingTop: "calc((20 / var(--sc)) * 1rem)",
-												paddingLeft: "calc((20 / var(--sc)) * 1rem)",
-											}}
-										>
+										<span className="request">
 											<span className="purplish">.</span>
 											<span className="bluish">finish</span>
 											<span className="yellowish">()</span>
 										</span>
-										<span
-											style={{
-												display: "block",
-												paddingTop: "calc((20 / var(--sc)) * 1rem)",
-												paddingLeft: "calc((20 / var(--sc)) * 1rem)",
-											}}
-										>
+										<span className="request">
 											<span className="purplish">.</span>
 											<span className="bluish">then</span>
 											<span className="yellowish">(</span>
@@ -114,13 +87,7 @@ const Section2 = () => {
 											<span className="purplish">()</span>
 											<span className="yellowish">)</span>
 										</span>
-										<span
-											style={{
-												display: "block",
-												paddingTop: "calc((20 / var(--sc)) * 1rem)",
-												paddingLeft: "calc((20 / var(--sc)) * 1rem)",
-											}}
-										>
+										<span className="request">
 											<span className="purplish">.</span>
 											<span className="bluish">catch</span>
 											<span className="yellowish">(</span>
@@ -149,37 +116,37 @@ const Section2 = () => {
 											<span>master</span>
 										</span>
 									</div>
-									<button>Run Code</button>
+									<button className="run">Run Code</button>
 								</div>
 							</div>
 							<div className="console">
-								<div className="container">
+								<div className="playground">
 									<div className="node">
-										<span>$</span>
+										<span>$&nbsp;</span>
 										<span>node index.js</span>
 									</div>
 									<div>
-										<span>{`> fetch requirements...`}</span>
+										<span>{`> fetch_requirements...`}</span>
 										<br />
 										<span>
 											<span>[</span>
-											<span>200</span>
-											<span>]</span>
-											<span>project requirements.collected</span>
+											<span className="aqua">200</span>
+											<span>] </span>
+											<span>project_requirements.collected</span>
 										</span>
 										<br />
 										<span>
 											<span>[</span>
-											<span>200</span>
-											<span>]</span>
-											<span>project completed</span>
+											<span className="aqua">200</span>
+											<span>] </span>
+											<span>project_completed</span>
 										</span>
 										<br />
 										<span>
 											<span>[</span>
-											<span>200</span>
-											<span>]</span>
-											<span>project succedeed</span>
+											<span className="aqua">200</span>
+											<span>] </span>
+											<span>project_succedeed</span>
 										</span>
 									</div>
 								</div>
@@ -190,6 +157,10 @@ const Section2 = () => {
 			</section>
 
 			<style jsx>{`
+				section {
+					width: 100vw;
+				}
+
 				.container {
 					margin: 0 calc((var(--ps) / var(--sc)) * 1rem);
 					min-height: calc((500 / var(--sc)) * 1rem);
@@ -268,6 +239,23 @@ const Section2 = () => {
 				.typist > span {
 					padding: calc((10 / var(--sc)) * 1rem) 0;
 					display: block;
+				}
+
+				.while,
+				.project {
+					padding-top: calc((70 / var(--sc)) * 1rem) !important;
+				}
+
+				.includeAwesomeEngineer,
+				.request {
+					display: block;
+					padding-top: calc((20 / var(--sc)) * 1rem) !important;
+					padding-left: calc((20 / var(--sc)) * 1rem) !important;
+				}
+
+				.brace {
+					display: block;
+					padding-top: calc((20 / var(--sc)) * 1rem) !important;
 				}
 
 				.whitish {
@@ -368,6 +356,160 @@ const Section2 = () => {
 					display: block;
 					width: 16px;
 					height: 16px;
+					margin: 0 calc((15 / var(--sc)) * 1rem);
+				}
+
+				.console {
+					position: relative;
+					color: var(--third);
+					padding: calc((25 / var(--sc)) * 1rem) 0;
+					user-select: none;
+				}
+
+				.playground {
+					margin: 0 calc((25 / var(--sc)) * 1rem);
+				}
+
+				.node {
+					display: flex;
+					align-items: flex-end;
+				}
+
+				@media screen and (max-width: 768px) {
+					.container {
+						row-gap: calc((30 / var(--sc)) * 1rem);
+						display: flex;
+						flex-direction: column;
+						min-height: initial;
+						align-items: initial;
+					}
+
+					.about {
+						width: 100%;
+					}
+
+					h3 {
+						font-size: calc((20 / var(--sc)) * 1rem);
+					}
+
+					h2 {
+						font-size: calc((25 / var(--sc)) * 1rem);
+						margin-bottom: calc((20 / var(--sc)) * 1rem);
+					}
+
+					p {
+						font-size: calc((20 / var(--sc)) * 1rem);
+					}
+
+					.code {
+						font-size: calc((15 / var(--sc)) * 1rem);
+					}
+
+					.numbers {
+						padding: calc((5 / var(--sc)) * 1rem) 0;
+					}
+
+					.numbers span {
+						padding: calc((5 / var(--sc)) * 1rem) calc((5 / var(--sc)) * 1rem);
+					}
+
+					.typist {
+						padding: calc((5 / var(--sc)) * 1rem) calc((15 / var(--sc)) * 1rem);
+					}
+
+					.while {
+						padding-top: calc((30 / var(--sc)) * 1rem) !important;
+					}
+
+					.project {
+						padding-top: calc((35 / var(--sc)) * 1rem) !important;
+					}
+
+					.includeAwesomeEngineer {
+						display: block;
+						padding-top: calc((15 / var(--sc)) * 1rem) !important;
+						padding-left: calc((10 / var(--sc)) * 1rem) !important;
+					}
+
+					.request {
+						padding-top: calc((10 / var(--sc)) * 1rem) !important;
+						padding-left: calc((10 / var(--sc)) * 1rem) !important;
+					}
+
+					.brace {
+						padding-top: calc((5 / var(--sc)) * 1rem) !important;
+					}
+
+					.typist > span {
+						padding: calc((5 / var(--sc)) * 1rem) 0;
+						display: block;
+					}
+
+					.status-bar {
+						height: calc((30 / var(--sc)) * 1rem);
+					}
+
+					.edit-mode {
+						font-size: calc((15 / var(--sc)) * 1rem);
+						padding: calc((3 / var(--sc)) * 1rem) calc((10 / var(--sc)) * 1rem);
+					}
+
+					.filename {
+						font-size: calc((10 / var(--sc)) * 1rem);
+						margin-left: calc((15 / var(--sc)) * 1rem);
+					}
+
+					.code-info {
+						margin-right: calc((15 / var(--sc)) * 1rem);
+					}
+
+					.utf {
+						margin: 0 calc((5 / var(--sc)) * 1rem);
+						font-size: calc((15 / var(--sc)) * 1rem);
+					}
+
+					.git {
+						margin: 0 calc((5 / var(--sc)) * 1rem);
+						font-size: calc((15 / var(--sc)) * 1rem);
+					}
+
+					.git-branch {
+						background: url(/icons/git-branch.svg) center no-repeat;
+						color: #fff;
+						display: block;
+						width: 16px;
+						height: 16px;
+						margin: 0 calc((5 / var(--sc)) * 1rem);
+					}
+
+					.run {
+						border: none;
+						appearance: none;
+						background: 0, 0;
+						border-radius: calc((15 / var(--sc)) * 1rem);
+						outline: none;
+						cursor: pointer;
+						text-transform: uppercase;
+						font-family: "Montserrat", sans-serif;
+						font-size: calc((10 / var(--sc)) * 1rem);
+						color: var(--pln-whitish);
+					}
+
+					.console {
+						position: relative;
+						color: var(--third);
+						padding: calc((25 / var(--sc)) * 1rem) 0;
+						user-select: none;
+					}
+
+					.playground {
+						margin: 0 calc((25 / var(--sc)) * 1rem);
+					}
+
+					.node {
+						display: flex;
+						align-items: flex-end;
+					}
 				}
 			`}</style>
 		</>
