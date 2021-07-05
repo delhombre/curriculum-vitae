@@ -6,7 +6,7 @@ import Section3 from "../components/Section3";
 export default function Home() {
 	return (
 		<>
-			<main>
+			<main style={{ overflowX: "hidden" }}>
 				<Section1 />
 				<Section2 />
 				<Section3 />

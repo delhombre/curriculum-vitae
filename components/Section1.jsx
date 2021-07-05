@@ -68,10 +68,6 @@ const Section1 = () => {
 				}
 
 				@media screen and (max-width: 768px) {
-					.presentation {
-						transform: translateY(-60%);
-					}
-
 					h2 {
 						font-size: calc((25 / var(--sc)) * 1rem);
 					}

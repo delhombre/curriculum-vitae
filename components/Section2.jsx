@@ -303,9 +303,11 @@ const Section2 = () => {
 					font-size: calc((25 / var(--sc)) * 1rem);
 					padding: calc((3 / var(--sc)) * 1rem) calc((10 / var(--sc)) * 1rem);
 					position: relative;
+					border-top-right-radius: 10px;
+					border-bottom-right-radius: 10px;
 				}
 
-				.edit-mode::after {
+				/*.edit-mode::after {
 					content: "";
 					position: absolute;
 					top: 0px;
@@ -317,7 +319,7 @@ const Section2 = () => {
 					border-style: solid;
 					border-color: transparent transparent transparent
 						var(--pln-foreground);
-				}
+				}*/
 
 				.filename {
 					font-size: calc((25 / var(--sc)) * 1rem);
