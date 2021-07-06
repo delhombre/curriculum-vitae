@@ -1,6 +1,6 @@
 import Head from "next/head";
 
-const Section2 = () => {
+const Section2 = ({ reference }) => {
 	return (
 		<>
 			<Head>
@@ -9,7 +9,7 @@ const Section2 = () => {
 					rel="stylesheet"
 				/>
 			</Head>
-			<section>
+			<section ref={reference}>
 				<div className="container">
 					<div className="about">
 						<h3>Qui suis-je ?</h3>
@@ -362,16 +362,16 @@ const Section2 = () => {
 				}
 
 				.run {
-						border: none;
-						appearance: none;
-						background: 0, 0;
-						outline: none;
-						cursor: pointer;
-						text-transform: uppercase;
-						font-family: "Montserrat", sans-serif;
-						font-size: calc((25 / var(--sc)) * 1rem);
-						color: var(--pln-whitish);
-					}
+					border: none;
+					appearance: none;
+					background: 0, 0;
+					outline: none;
+					cursor: pointer;
+					text-transform: uppercase;
+					font-family: "Montserrat", sans-serif;
+					font-size: calc((25 / var(--sc)) * 1rem);
+					color: var(--pln-whitish);
+				}
 
 				.console {
 					position: relative;

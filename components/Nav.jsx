@@ -1,25 +1,6 @@
-const icons = [
-	{
-		name: "home",
-		description: "Icône de maison répresentant l'onglet accueil",
-	},
-	{
-		name: "user",
-		description: "Icône d'utilisateur répresentant l'onglet à propos",
-	},
-	{
-		name: "grid",
-		description: "Icône de grille répresentant l'onglet projets",
-	},
-	{
-		name: "code",
-		description:
-			"Icône de balise html répresentant l'onglet compétences techniques",
-	},
-	{ name: "mail", description: "Icône de mail répresentant l'onglet contact" },
-];
+const icons = ["home", "user", "grid", "code", "mail"];
 
-const Nav = () => {
+const Nav = ({ handleClick }) => {
 	return (
 		<>
 			<nav>
@@ -28,8 +9,8 @@ const Nav = () => {
 						<li key={index}>
 							<a
 								className={`${index === 0 ? "active" : ""}`}
-								href="#"
-								style={{ backgroundImage: `url(/icons/${icon.name}.svg)` }}
+								style={{ backgroundImage: `url(/icons/${icon}.svg)` }}
+								onClick={() => handleClick(icon)}
 							></a>
 						</li>
 					))}
@@ -48,7 +29,7 @@ const Nav = () => {
 					border-radius: calc((50 / var(--sc)) * 1rem);
 					backdrop-filter: blur(1rem);
 					z-index: 1100;
-						background-color: rgb(68, 68, 68, 0.6);
+					background-color: rgb(68, 68, 68, 0.6);
 				}
 
 				ul {
@@ -68,8 +49,18 @@ const Nav = () => {
 				}
 
 				a.active {
-					background-color: red;
+					background-color: var(--main);
 					border-radius: calc((25 / var(--sc)) * 1rem);
+					animation: animate 0.5 ease;
+				}
+
+				@keyframes animate {
+					from {
+						tranform: translateX(-100%);
+					}
+					to {
+						transform: translateY(0);
+					}
 				}
 
 				@media screen and (max-width: 768px) {
@@ -77,7 +68,8 @@ const Nav = () => {
 						border-radius: calc((20 / var(--sc)) * 1rem);
 						width: calc(100% - calc((var(--ps) / var(--sc)) * 1rem));
 						margin: initial;
-						background-color: rgb(135, 206, 235, 0.25);
+						background-color: rgb(35, 55, 63, 0.25);
+						/*rgb(135, 206, 235, 0.25)*/
 					}
 
 					ul {

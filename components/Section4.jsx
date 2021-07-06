@@ -1,9 +1,9 @@
 import React from "react";
 
-const Section4 = () => {
+const Section4 = ({ reference }) => {
 	return (
 		<>
-			<section>
+			<section ref={reference}>
 				<div className="container">
 					<h3>Stack technique</h3>
 					<h2>Les Solutions Optimales nécessitent des Outils appropriés</h2>

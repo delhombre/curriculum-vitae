@@ -1,9 +1,9 @@
 import React from "react";
 
-const Section3 = () => {
+const Section3 = ({ reference }) => {
 	return (
 		<>
-			<section>
+			<section ref={reference}>
 				<div className="top-icons">
 					<div className="icon"></div>
 					<div className="icon"></div>

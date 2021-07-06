@@ -1,3 +1,4 @@
+import { useEffect, useRef } from "react";
 import Nav from "../components/Nav";
 import Section1 from "../components/Section1";
 import Section2 from "../components/Section2";
@@ -6,15 +7,74 @@ import Section4 from "../components/Section4";
 import Section5 from "../components/Section5";
 
 export default function Home() {
+	const section1 = useRef(null),
+		section2 = useRef(null),
+		section3 = useRef(null),
+		section4 = useRef(null),
+		section5 = useRef(null);
+
+	const sections = [
+		{
+			id: "home",
+			el: section1,
+		},
+		{
+			id: "user",
+			el: section2,
+		},
+		{
+			id: "grid",
+			el: section3,
+		},
+		{
+			id: "code",
+			el: section4,
+		},
+		{
+			id: "mail",
+			el: section5,
+		},
+	];
+
+	const handleClick = (name) => {
+		sections.forEach((section) => {
+			if (section.id === name) {
+				section.el.current.scrollIntoView({ behavior: "smooth" });
+			}
+
+			return;
+		});
+	};
+
+	const main = useRef(null);
+
+	useEffect(() => {
+		const options = {
+			// root: main.current,
+			rootMargin: "0px",
+			threshold: 1.0,
+		};
+
+		const observer = new IntersectionObserver((entries) => {
+			entries.forEach((entry) => {
+				console.log(entry);
+			});
+		}, options);
+
+		sections.forEach((section) => {
+			observer.observe(section.el.current);
+		});
+	}, [sections]);
+
 	return (
 		<>
-			<main>
-				<Section1 />
-				<Section2 />
-				<Section3 />
-				<Section4 />
-				<Section5 />
-				<Nav />
+			<main ref={main}>
+				<Section1 reference={section1} />
+				<Section2 reference={section2} />
+				<Section3 reference={section3} />
+				<Section4 reference={section4} />
+				<Section5 reference={section5} />
+				<Nav handleClick={handleClick} />
 			</main>
 
 			<footer>

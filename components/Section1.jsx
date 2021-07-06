@@ -1,14 +1,14 @@
 // import { useEffect } from "react";
 // import particles from "../utils/particle";
 
-const Section1 = () => {
+const Section1 = ({ reference }) => {
 	// useEffect(() => {
 	// 	particles();
 	// }, []);
 
 	return (
 		<>
-			<section id="container">
+			<section id="container" ref={reference}>
 				<div className="presentation">
 					<h2>
 						Bonjour, <span className="iam">Je suis Bruno Dogbase...</span>

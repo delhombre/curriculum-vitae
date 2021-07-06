@@ -1,7 +1,7 @@
-const Section5 = () => {
+const Section5 = ({ reference }) => {
 	return (
 		<>
-			<section>
+			<section ref={reference}>
 				<div className="container">
 					<h3>Contact</h3>
 					<h2>Comment et où me retrouver ?</h2>
