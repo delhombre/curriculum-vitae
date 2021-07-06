@@ -43,12 +43,12 @@ export default function Home() {
 					top: 50%;
 					left: 50%;
 					transform: translate(-50%, -30%);
-					width: calc(100% - (calc((var(--ps) / var(--sc)) * 1rem) * 2));
 				}
 
 				@media screen and (max-width: 768px) {
 					p {
 						font-size: calc((20 / var(--sc)) * 1rem);
+						width: calc(100% - (calc((var(--ps) / var(--sc)) * 1rem) * 2));
 					}
 
 					p span {
