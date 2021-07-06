@@ -18,9 +18,10 @@ export default function Home() {
 			</main>
 
 			<footer>
-				<div className="container">
-					<p>Droits réservés {new Date().getFullYear()} &copy;brunodogbase</p>
-				</div>
+				<p>
+					<span>Droits réservés </span>
+					<span>{new Date().getFullYear()} &copy;brunodogbase</span>
+				</p>
 			</footer>
 
 			<style jsx>{`
@@ -31,12 +32,8 @@ export default function Home() {
 				footer {
 					min-height: 30vh;
 					background-color: var(--second);
-					clip-path: polygon(50% 0%, 100% 38%, 82% 100%, 18% 100%, 0% 38%);
+					clip-path: polygon(0 20%, 100% 10%, 100% 100%, 0 100%);
 					position: relative;
-				}
-
-				.container {
-					margin: 0 calc((var(--ps) / var(--sc)) * 1rem);
 				}
 
 				p {
@@ -51,6 +48,11 @@ export default function Home() {
 				@media screen and (max-width: 768px) {
 					p {
 						font-size: calc((20 / var(--sc)) * 1rem);
+					}
+
+					p span {
+						display: block;
+						text-align: center;
 					}
 				}
 			`}</style>
