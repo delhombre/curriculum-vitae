@@ -1,3 +1,4 @@
+import Head from "next/head";
 import { useEffect, useRef } from "react";
 import Nav from "../components/Nav";
 import Section1 from "../components/Section1";
@@ -68,6 +69,38 @@ export default function Home() {
 
 	return (
 		<>
+			<Head>
+				<title>Bruno Dogbase</title>
+				<meta httpEquiv="Content-Type" content="text/html;charset=UTF-8" />
+				<meta
+					name="description"
+					content="Développeur web fullstack résidant et exerçant sur Bamako. J'accepte tous les projets en télé-travail partout dans le monde."
+				/>
+				<meta
+					name="keywords"
+					content="Bruno Dogbase Développeur web Bamako Mali"
+				/>
+				<meta property="og:image" content="/bruno.jpg" />
+				<meta property="og:type" content="portfolio" />
+				<meta
+					property="og:description"
+					content="Développeur web fullstack résidant et exerçant sur Bamako. J'accepte tous les projets en télé-travail partout dans le monde."
+				/>
+				<meta property="og:locale" content="fr_FR" />
+				<meta property="og:title" content="Bruno Dogbase" />
+				<meta name="twitter:card" content="summary_large_image" />
+				<meta
+					name="twitter:site"
+					content="https://curriculum-vitae-brunodogbase.vercel.app"
+				/>
+				<meta name="twitter:creator" content="@BrruunnooD" />
+				<meta name="twitter:title" content="Bruno Dogbase" />
+				<meta
+					name="twitter:description"
+					content="Développeur web fullstack résidant et exerçant sur Bamako. J'accepte tous les projets en télé-travail partout dans le monde."
+				/>
+				<meta name="twitter:image" content="/bruno.jpg" />
+			</Head>
 			<main ref={main}>
 				<Section1 reference={section1} />
 				<Section2 reference={section2} />
