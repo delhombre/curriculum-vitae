@@ -74,6 +74,7 @@ const Section1 = () => {
 
 					h1 {
 						font-size: calc((30 / var(--sc)) * 1rem);
+						-webkit-text-stroke: 1px var(--main);
 					}
 
 					p {

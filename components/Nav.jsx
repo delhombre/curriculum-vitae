@@ -77,6 +77,7 @@ const Nav = () => {
 						border-radius: calc((20 / var(--sc)) * 1rem);
 						width: calc(100% - calc((var(--ps) / var(--sc)) * 1rem));
 						margin: initial;
+						background-color: rgb(68, 68, 68, 0.6);
 					}
 
 					ul {

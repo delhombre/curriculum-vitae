@@ -361,6 +361,18 @@ const Section2 = () => {
 					margin: 0 calc((15 / var(--sc)) * 1rem);
 				}
 
+				.run {
+						border: none;
+						appearance: none;
+						background: 0, 0;
+						outline: none;
+						cursor: pointer;
+						text-transform: uppercase;
+						font-family: "Montserrat", sans-serif;
+						font-size: calc((25 / var(--sc)) * 1rem);
+						color: var(--pln-whitish);
+					}
+
 				.console {
 					position: relative;
 					color: var(--third);
@@ -485,16 +497,7 @@ const Section2 = () => {
 					}
 
 					.run {
-						border: none;
-						appearance: none;
-						background: 0, 0;
-						border-radius: calc((15 / var(--sc)) * 1rem);
-						outline: none;
-						cursor: pointer;
-						text-transform: uppercase;
-						font-family: "Montserrat", sans-serif;
 						font-size: calc((10 / var(--sc)) * 1rem);
-						color: var(--pln-whitish);
 					}
 
 					.console {

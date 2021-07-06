@@ -30,7 +30,7 @@ export default function Home() {
 				}
 
 				footer {
-					min-height: 30vh;
+					min-height: 50vh;
 					background-color: var(--second);
 					clip-path: polygon(0 20%, 100% 10%, 100% 100%, 0 100%);
 					position: relative;
@@ -40,9 +40,10 @@ export default function Home() {
 					font-size: calc((40 / var(--sc)) * 1rem);
 					color: var(--third);
 					position: absolute;
-					bottom: calc((20 / var(--sc)) * 1rem);
+					top: 50%;
 					left: 50%;
-					transform: translateX(-50%);
+					transform: translate(-50%, -30%);
+					width: calc(100% - (calc((var(--ps) / var(--sc)) * 1rem) * 2));
 				}
 
 				@media screen and (max-width: 768px) {

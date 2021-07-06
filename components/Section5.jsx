@@ -163,6 +163,10 @@ const Section5 = () => {
 						padding: calc((10 / var(--sc)) * 1rem);
 					}
 
+					.box:nth-child(2) {
+						margin-top: calc((20 / var(--sc)) * 1rem);
+					}
+
 					.mail {
 						font-size: calc((15 / var(--sc)) * 1rem);
 						padding: calc((5 / var(--sc)) * 1rem);
