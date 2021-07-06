@@ -45,10 +45,10 @@ const Nav = () => {
 					margin: 0 calc((var(--ps) / var(--sc)) * 1rem);
 					width: 100%;
 					max-width: calc((1000 / var(--sc)) * 1rem);
-					background-color: rgb(135, 206, 235, 0.25);
 					border-radius: calc((50 / var(--sc)) * 1rem);
 					backdrop-filter: blur(1rem);
 					z-index: 1100;
+						background-color: rgb(68, 68, 68, 0.6);
 				}
 
 				ul {
@@ -77,7 +77,7 @@ const Nav = () => {
 						border-radius: calc((20 / var(--sc)) * 1rem);
 						width: calc(100% - calc((var(--ps) / var(--sc)) * 1rem));
 						margin: initial;
-						background-color: rgb(68, 68, 68, 0.6);
+						background-color: rgb(135, 206, 235, 0.25);
 					}
 
 					ul {
