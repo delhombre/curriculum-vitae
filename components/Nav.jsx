@@ -45,8 +45,7 @@ const Nav = () => {
 					margin: 0 calc((var(--ps) / var(--sc)) * 1rem);
 					width: 100%;
 					max-width: calc((1000 / var(--sc)) * 1rem);
-					background-color: #00000073;
-					font-size: calc((30 / var(--sc)) * 1rem);
+					background-color: rgb(135, 206, 235, 0.25);
 					border-radius: calc((50 / var(--sc)) * 1rem);
 					backdrop-filter: blur(1rem);
 					z-index: 1100;
@@ -70,7 +69,30 @@ const Nav = () => {
 
 				a.active {
 					background-color: red;
-					border-radius: calc((30 / var(--sc)) * 1rem);
+					border-radius: calc((25 / var(--sc)) * 1rem);
+				}
+
+				@media screen and (max-width: 768px) {
+					nav {
+						border-radius: calc((20 / var(--sc)) * 1rem);
+						width: calc(100% - calc((var(--ps) / var(--sc)) * 1rem));
+						margin: initial;
+					}
+
+					ul {
+						padding: calc((15 / var(--sc)) * 1rem);
+					}
+
+					li > a {
+						width: calc((35 / var(--sc)) * 1rem);
+						height: calc((35 / var(--sc)) * 1rem);
+						padding: calc((25 / var(--sc)) * 1rem);
+						background-size: 90%;
+					}
+
+					a.active {
+						border-radius: calc((10 / var(--sc)) * 1rem);
+					}
 				}
 			`}</style>
 		</>

@@ -1,4 +1,4 @@
-// import Nav from "../components/Nav";
+import Nav from "../components/Nav";
 import Section1 from "../components/Section1";
 import Section2 from "../components/Section2";
 import Section3 from "../components/Section3";
@@ -14,7 +14,7 @@ export default function Home() {
 				<Section3 />
 				<Section4 />
 				<Section5 />
-				{/* <Nav /> */}
+				<Nav />
 			</main>
 
 			<footer>
