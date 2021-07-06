@@ -7,7 +7,7 @@ const Section5 = () => {
 					<h2>Comment et où me retrouver ?</h2>
 					<div className="boxes">
 						<div className="box">
-							<h3>Par Mail</h3>
+							<h3 style={{ color: "var(--fourth)" }}>Par Mail</h3>
 							<p>
 								Contactez-moi directement en utilisant le button ci-dessous.
 								Vous recevrez une réponse dans les prochaines heures.
@@ -17,7 +17,7 @@ const Section5 = () => {
 							</a>
 						</div>
 						<div className="box">
-							<h3>Mes réseaux</h3>
+							<h3 style={{ color: "var(--fourth)" }}>Mes réseaux</h3>
 							<ul>
 								<li>
 									<a
