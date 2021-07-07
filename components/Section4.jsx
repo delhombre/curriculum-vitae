@@ -3,7 +3,7 @@ import React from "react";
 const Section4 = ({ reference }) => {
 	return (
 		<>
-			<section ref={reference}>
+			<section ref={reference} name="code">
 				<div className="container">
 					<h3>Stack technique</h3>
 					<h2>Les Solutions Optimales nécessitent des Outils appropriés</h2>

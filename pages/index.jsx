@@ -1,5 +1,5 @@
 import Head from "next/head";
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import Nav from "../components/Nav";
 import Section1 from "../components/Section1";
 import Section2 from "../components/Section2";
@@ -49,16 +49,20 @@ export default function Home() {
 
 	const main = useRef(null);
 
+	const [state, setState] = useState(null);
+
 	useEffect(() => {
 		const options = {
 			// root: main.current,
-			rootMargin: "0px",
-			threshold: 1.0,
+			// rootMargin: "0px",
+			threshold: 0.75,
 		};
 
 		const observer = new IntersectionObserver((entries) => {
 			entries.forEach((entry) => {
-				console.log(entry);
+				if (entry.intersectionRatio >= 0.75) {
+					setState(entry.target.getAttribute("name"));
+				}
 			});
 		}, options);
 
@@ -107,7 +111,7 @@ export default function Home() {
 				<Section3 reference={section3} />
 				<Section4 reference={section4} />
 				<Section5 reference={section5} />
-				<Nav handleClick={handleClick} />
+				<Nav handleClick={handleClick} nav={state} />
 			</main>
 
 			<footer>

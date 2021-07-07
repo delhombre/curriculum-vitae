@@ -9,7 +9,7 @@ const Section2 = ({ reference }) => {
 					rel="stylesheet"
 				/>
 			</Head>
-			<section ref={reference}>
+			<section ref={reference} name="user">
 				<div className="container">
 					<div className="about">
 						<h3>Qui suis-je ?</h3>
@@ -183,7 +183,7 @@ const Section2 = ({ reference }) => {
 				h3 {
 					font-size: calc((40 / var(--sc)) * 1rem);
 					margin-bottom: calc((20 / var(--sc)) * 1rem);
-					color: var(--fourth);
+					color: var(--main);
 				}
 
 				h2 {

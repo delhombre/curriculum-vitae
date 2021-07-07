@@ -1,6 +1,6 @@
 const icons = ["home", "user", "grid", "code", "mail"];
 
-const Nav = ({ handleClick }) => {
+const Nav = ({ handleClick, nav }) => {
 	return (
 		<>
 			<nav>
@@ -8,7 +8,7 @@ const Nav = ({ handleClick }) => {
 					{icons.map((icon, index) => (
 						<li key={index}>
 							<a
-								className={`${index === 0 ? "active" : ""}`}
+								className={`${nav === icon ? "active" : ""}`}
 								style={{ backgroundImage: `url(/icons/${icon}.svg)` }}
 								onClick={() => handleClick(icon)}
 							></a>
@@ -46,6 +46,7 @@ const Nav = ({ handleClick }) => {
 					height: calc((100 / var(--sc)) * 1rem);
 					background-position: center;
 					background-repeat: no-repeat;
+					cursor: pointer;
 				}
 
 				a.active {

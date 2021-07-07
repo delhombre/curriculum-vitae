@@ -17,6 +17,7 @@ export default function particles() {
 	let phase = 0;
 
 	const scene = new THREE.Scene();
+	scene.background = new THREE.Color("rgb(23, 23, 23)");
 	const camera = new THREE.PerspectiveCamera(95, width / height, 0.1, 1000);
 	camera.position.z = 30;
 
@@ -28,7 +29,7 @@ export default function particles() {
 	const geometry = new THREE.BoxGeometry(boxSize, boxSize, boxSize);
 	const materialGreen = new THREE.MeshBasicMaterial({
 		transparent: true,
-		color: 0xff0000,
+		color: new THREE.Color("rgb(218, 0, 55)"),
 		opacity: 0.4,
 		side: THREE.DoubleSide,
 	});

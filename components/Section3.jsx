@@ -3,7 +3,7 @@ import React from "react";
 const Section3 = ({ reference }) => {
 	return (
 		<>
-			<section ref={reference}>
+			<section ref={reference} name="grid">
 				<div className="top-icons">
 					<div className="icon"></div>
 					<div className="icon"></div>
