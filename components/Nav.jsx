@@ -26,10 +26,10 @@ const Nav = ({ handleClick, nav }) => {
 					margin: 0 calc((var(--ps) / var(--sc)) * 1rem);
 					width: 100%;
 					max-width: calc((1000 / var(--sc)) * 1rem);
-					border-radius: calc((50 / var(--sc)) * 1rem);
+					border-radius: calc((35 / var(--sc)) * 1rem);
 					backdrop-filter: blur(1rem);
 					z-index: 1100;
-					background-color: rgb(68, 68, 68, 0.6);
+					background-color: rgb(35, 55, 63, 0.25);
 				}
 
 				ul {
@@ -66,7 +66,7 @@ const Nav = ({ handleClick, nav }) => {
 
 				@media screen and (max-width: 768px) {
 					nav {
-						border-radius: calc((20 / var(--sc)) * 1rem);
+						border-radius: calc((10 / var(--sc)) * 1rem);
 						width: calc(100% - calc((var(--ps) / var(--sc)) * 1rem));
 						margin: initial;
 						background-color: rgb(35, 55, 63, 0.25);

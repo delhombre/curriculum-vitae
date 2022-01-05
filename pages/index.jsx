@@ -1,5 +1,5 @@
 import Head from "next/head";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import Nav from "../components/Nav";
 import Section1 from "../components/Section1";
 import Section2 from "../components/Section2";
@@ -14,28 +14,31 @@ export default function Home() {
 		section4 = useRef(null),
 		section5 = useRef(null);
 
-	const sections = [
-		{
-			id: "home",
-			el: section1,
-		},
-		{
-			id: "user",
-			el: section2,
-		},
-		{
-			id: "grid",
-			el: section3,
-		},
-		{
-			id: "code",
-			el: section4,
-		},
-		{
-			id: "mail",
-			el: section5,
-		},
-	];
+	const sections = useMemo(
+		() => [
+			{
+				id: "home",
+				el: section1,
+			},
+			{
+				id: "user",
+				el: section2,
+			},
+			{
+				id: "grid",
+				el: section3,
+			},
+			{
+				id: "code",
+				el: section4,
+			},
+			{
+				id: "mail",
+				el: section5,
+			},
+		],
+		[]
+	);
 
 	const handleClick = (name) => {
 		sections.forEach((section) => {
@@ -55,13 +58,14 @@ export default function Home() {
 		const options = {
 			// root: main.current,
 			// rootMargin: "0px",
-			threshold: 0.75,
+			threshold: 0.6,
 		};
 
 		const observer = new IntersectionObserver((entries) => {
 			entries.forEach((entry) => {
-				if (entry.intersectionRatio >= 0.75) {
+				if (entry.intersectionRatio >= 0.6) {
 					setState(entry.target.getAttribute("name"));
+					console.log(entry.target.getAttribute("name"));
 				}
 			});
 		}, options);

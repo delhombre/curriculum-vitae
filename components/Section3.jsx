@@ -16,7 +16,7 @@ const Section3 = ({ reference }) => {
 						<p>
 							Une sélection non exhaustive de quelques sites web réalisés jusque
 							là. Ces projets répresentent une varieté de thème dont {`j'ai`} eu
-							à traiter avec les clients. De la plateforme de lecture et de de
+							à traiter avec les clients. De la plateforme de lecture et de
 							téléchargement de contenus multimédias (streaming), au design
 							créatif du portfolio de photographe en passant par la web radio,
 							la satisfaction des clients a été au coeur de la réalisation de
