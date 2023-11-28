@@ -40,7 +40,7 @@ const Section3 = ({ reference }) => {
 						<div className="scene">
 							<p>
 								<a href="#" target="_blank" rel="noopener noreferrer">
-									https://obscury.heroku.com
+									https://obscury.com
 								</a>
 							</p>
 							<p>
